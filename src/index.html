@@ -61,7 +61,13 @@
 					interviewees.forEach(function(interview) { %>
 					<div class="grid-item interview col-3">
 						<a href="interview-<%= interview.file_slug %>.html">
-							<img src="https://img.youtube.com/vi/<%= interview.video_slug %>/mqdefault.jpg" alt="<%= interview.name %>">
+							<img
+								src="https://i.ytimg.com/vi/<%= interview.video_slug %>/mqdefault.jpg"
+								srcset="
+									https://i.ytimg.com/vi/<%= interview.video_slug %>/mqdefault.jpg 320w,
+									https://i.ytimg.com/vi/<%= interview.video_slug %>/hqdefault.jpg 480w,
+									https://i.ytimg.com/vi/<%= interview.video_slug %>/maxresdefault.jpg 1280w"
+								alt="<%= interview.name %>">
 							<h3><%= interview.name %></h3>
 							<p><%= interview.leadin %></p>
 						</a>
